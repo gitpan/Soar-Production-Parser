@@ -31,10 +31,10 @@ no_index:
 provides:
   Soar::Production::Parser:
     file: lib/Soar/Production/Parser.pm
-    version: 1.122800
+    version: 1.122820
   Soar::Production::Parser::PRDGrammar:
     file: lib/Soar/Production/Parser/PRDGrammar.pm
-    version: 1.122800
+    version: 1.122820
 requires:
   Carp: 0
   Data::Dumper: 0
@@ -46,7 +46,7 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Soar-Production-Parser
   homepage: http://search.cpan.org/dist/Soar-Production-Parser/
   license: http://dev.perl.org/licenses/
-version: 1.122800
+version: 1.122820
 x_BuiltWith:
   modules:
     Carp: 1.26

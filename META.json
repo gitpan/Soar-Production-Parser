@@ -59,11 +59,11 @@
    "provides" : {
       "Soar::Production::Parser" : {
          "file" : "lib/Soar/Production/Parser.pm",
-         "version" : "1.122800"
+         "version" : "1.122820"
       },
       "Soar::Production::Parser::PRDGrammar" : {
          "file" : "lib/Soar/Production/Parser/PRDGrammar.pm",
-         "version" : "1.122800"
+         "version" : "1.122820"
       }
    },
    "release_status" : "stable",
@@ -77,7 +77,7 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "1.122800",
+   "version" : "1.122820",
    "x_BuiltWith" : {
       "modules" : {
          "Carp" : "1.26",

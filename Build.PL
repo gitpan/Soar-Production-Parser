@@ -29,7 +29,7 @@ my %module_build_args = (
     "Nathan Glenn <garfieldnate\@gmail.com>"
   ],
   "dist_name" => "Soar-Production-Parser",
-  "dist_version" => "1.122800",
+  "dist_version" => "1.122820",
   "license" => "perl",
   "module_name" => "Soar::Production::Parser",
   "recommends" => {},
