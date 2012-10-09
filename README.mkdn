@@ -4,7 +4,7 @@ Soar::Production::Parser - PARSES SOAR PRODUCTIONS
 
 # VERSION
 
-version 1.122820
+version 1.122830
 
 # SYNOPSIS
 

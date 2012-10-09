@@ -12,7 +12,7 @@ package Soar::Production::Parser::PRDGrammar;
 use strict;
 use warnings;
 
-our $VERSION = '1.122820'; # VERSION
+our $VERSION = '1.122830'; # VERSION
 
 #this grammar will return a parse tree of a production
 our $GRAMMAR = <<'EOGRAMMAR';
@@ -302,7 +302,7 @@ Soar::Production::Parser::PRDGrammar - P::RD grammar for Soar productions
 
 =head1 VERSION
 
-version 1.122820
+version 1.122830
 
 =head1 SYNOPSIS
 

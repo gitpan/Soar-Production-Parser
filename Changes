@@ -1,8 +1,13 @@
 
 Revision history for Soar-Production-Parser
  
+1.122830
+	Released: 2012-10-09 19:41:36 UTC
+	Require Perl 5.10.
+	
 1.122820
 	Released: 2012-10-08 23:19:41 UTC
+	Doc improvements and POD format fixes.
 
 1.122800
 	Released: 2012-10-06 22:47:02 UTC

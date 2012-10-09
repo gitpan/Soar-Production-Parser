@@ -11,8 +11,10 @@ package Soar::Production::Parser;
 
 use strict;
 use warnings;
+#needed for advanced regex expressions
+use 5.010;
 
-our $VERSION = '1.122820'; # VERSION
+our $VERSION = '1.122830'; # VERSION
 
 use Soar::Production::Parser::PRDGrammar;
 use Parse::RecDescent;
@@ -199,7 +201,7 @@ Soar::Production::Parser - PARSES SOAR PRODUCTIONS
 
 =head1 VERSION
 
-version 1.122820
+version 1.122830
 
 =head1 SYNOPSIS
 

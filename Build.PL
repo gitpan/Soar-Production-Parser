@@ -29,7 +29,7 @@ my %module_build_args = (
     "Nathan Glenn <garfieldnate\@gmail.com>"
   ],
   "dist_name" => "Soar-Production-Parser",
-  "dist_version" => "1.122820",
+  "dist_version" => "1.122830",
   "license" => "perl",
   "module_name" => "Soar::Production::Parser",
   "recommends" => {},
@@ -38,7 +38,7 @@ my %module_build_args = (
     "Carp" => 0,
     "Data::Dumper" => 0,
     "Parse::RecDescent" => 0,
-    "perl" => "5.008",
+    "perl" => "5.010",
     "strict" => 0,
     "warnings" => 0
   },
