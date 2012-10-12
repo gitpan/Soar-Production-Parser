@@ -1,5 +1,5 @@
 {
-   "abstract" : "PARSES SOAR PRODUCTIONS\r",
+   "abstract" : "Parse Soar productions\r",
    "author" : [
       "Nathan Glenn <garfieldnate@gmail.com>"
    ],
@@ -64,11 +64,11 @@
    "provides" : {
       "Soar::Production::Parser" : {
          "file" : "lib/Soar/Production/Parser.pm",
-         "version" : "1.122830"
+         "version" : "1.122860"
       },
       "Soar::Production::Parser::PRDGrammar" : {
          "file" : "lib/Soar/Production/Parser/PRDGrammar.pm",
-         "version" : "1.122830"
+         "version" : "1.122860"
       }
    },
    "release_status" : "stable",
@@ -82,7 +82,7 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "1.122830",
+   "version" : "1.122860",
    "x_BuiltWith" : {
       "modules" : {
          "Carp" : "1.26",

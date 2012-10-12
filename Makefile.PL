@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "PARSES SOAR PRODUCTIONS\r",
+  "ABSTRACT" => "Parse Soar productions\r",
   "AUTHOR" => "Nathan Glenn <garfieldnate\@gmail.com>",
   "BUILD_REQUIRES" => {
     "Data::Diver" => 0,
@@ -40,7 +40,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "1.122830",
+  "VERSION" => "1.122860",
   "test" => {
     "TESTS" => "t/*.t"
   }

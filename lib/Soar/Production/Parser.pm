@@ -7,23 +7,19 @@
 # the same terms as the Perl 5 programming language system itself.
 #
 package Soar::Production::Parser;
-# ABSTRACT: PARSES SOAR PRODUCTIONS
+# ABSTRACT: Parse Soar productions
 
 use strict;
 use warnings;
 #needed for advanced regex expressions
 use 5.010;
 
-our $VERSION = '1.122830'; # VERSION
+our $VERSION = '1.122860'; # VERSION
 
 use Soar::Production::Parser::PRDGrammar;
 use Parse::RecDescent;
 use Carp;
 use Data::Dumper;
-
-#if you wish to debug the grammar, try turning on traces by uncommenting the following lines:
-# $::RD_TRACE = 1;
-# $::RD_HINT = 1;
 
 #a regular expression to split text into productions
 my $splitter = qr/
@@ -68,6 +64,10 @@ sub new {
 sub _init {
   my ($soarParser) = @_;
     $soarParser->{parser} = Parse::RecDescent->new($Soar::Production::Parser::PRDGrammar::GRAMMAR);
+	
+	#if you wish to debug the grammar, try turning on traces by uncommenting the following lines:
+	# $::RD_TRACE = 1;
+	# $::RD_HINT = 1;
 	return;
 }
 
@@ -142,7 +142,7 @@ sub get_parses {
 	my ($soarParser, $productions) = @_;
 	my @parses;
 	for(@$productions){
-		print STDERR $_;
+		# print STDERR $_;
 		push @parses, $soarParser->{parser}->parse($_);
 	}
 	return \@parses;
@@ -197,11 +197,11 @@ __END__
 
 =head1 NAME
 
-Soar::Production::Parser - PARSES SOAR PRODUCTIONS
+Soar::Production::Parser - Parse Soar productions
 
 =head1 VERSION
 
-version 1.122830
+version 1.122860
 
 =head1 SYNOPSIS
 

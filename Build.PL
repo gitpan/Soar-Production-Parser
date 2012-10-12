@@ -24,12 +24,12 @@ my %module_build_args = (
   "configure_requires" => {
     "Module::Build" => "0.3601"
   },
-  "dist_abstract" => "PARSES SOAR PRODUCTIONS\r",
+  "dist_abstract" => "Parse Soar productions\r",
   "dist_author" => [
     "Nathan Glenn <garfieldnate\@gmail.com>"
   ],
   "dist_name" => "Soar-Production-Parser",
-  "dist_version" => "1.122830",
+  "dist_version" => "1.122860",
   "license" => "perl",
   "module_name" => "Soar::Production::Parser",
   "recommends" => {},

@@ -1,8 +1,8 @@
 NAME
-    Soar::Production::Parser - PARSES SOAR PRODUCTIONS
+    Soar::Production::Parser - Parse Soar productions
 
 VERSION
-    version 1.122830
+    version 1.122860
 
 SYNOPSIS
       use Soar::Production::Parser;

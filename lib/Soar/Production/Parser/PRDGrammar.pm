@@ -12,7 +12,7 @@ package Soar::Production::Parser::PRDGrammar;
 use strict;
 use warnings;
 
-our $VERSION = '1.122830'; # VERSION
+our $VERSION = '1.122860'; # VERSION
 
 #this grammar will return a parse tree of a production
 our $GRAMMAR = <<'EOGRAMMAR';
@@ -51,15 +51,6 @@ our $GRAMMAR = <<'EOGRAMMAR';
 		{
 			{ conditions		=> $item[1] }
 		}
-	#we can only commit here because of the ordering in positive cond
-	stateImpCond: "(" <commit> condType idTest(?) attrValueTests(s?) ")"
-		{
-			{
-				type 			=> $item{condType},
-				idTest 			=> $item[4] ? $item[4][0]->{test} : undef,
-				attrValueTests => $item[5],
-			}
-		}
 	condType: "state" | "impasse"
 	cond: 
 		positiveCond 
@@ -75,20 +66,22 @@ our $GRAMMAR = <<'EOGRAMMAR';
 		{
 			$item{condsForOneId};
 		}
-		| stateImpCond
-		{
-			$item{stateImpCond};
-		}
 		| "{" <commit> cond(s) "}"
 		{ 
 			{ 'conjunction' => $item[3] }
 		}
-	condsForOneId: "(" condType(?) idTest attrValueTests(s) ")"
+	condsForOneId: "(" <commit> condType(?) idTest(?) attrValueTests(s?) ")"
+		#only a state_imp_cond can be missing an idTest or attrValueTests
+		<reject: do { 
+			not defined $item[3] and (
+				not defined $item[4] or $#{$item[5]} == -1 
+			)
+		} >
 		{
 			{
-				condType 	=> ($item[2] ? $item[2] : undef),
-				idTest 		=> $item{idTest},
-				attrValueTests =>	$item[4],
+				condType 	=> ($#{$item[3]} != -1 ? $item[3][0] : undef),
+				idTest 		=> ($#{$item[4]} != -1 ? $item[4][0]->{test} : undef),
+				attrValueTests =>	$item[5],
 			}
 		}
 	idTest: test
@@ -103,7 +96,7 @@ our $GRAMMAR = <<'EOGRAMMAR';
 				values		=> $item[3],
 			}
 		}
-	attTest:  "^" <commit> test(s /\./)
+	attTest: "^" <commit> test(s /\./)
 	valueTest: test /\+?/
 		{
 			{
@@ -246,7 +239,6 @@ our $GRAMMAR = <<'EOGRAMMAR';
 	symConstant: string { $item{string} } | quoted { $item{quoted} }
 	string: /[A-Za-z0-9\$%&*+\/:=?_><-]+/ 
 		<reject: do{ $item[1] =~ /^<.*>$/} > #reject if we've actually found a variable
-		#TODO: needs more engineering
 		<reject: do{ 
 			$item[1] =~ /^ [+!~><=-]+ $/x and 
 			$item[1] !~ /^ (?: >< | [<>]{3,}) $/x 
@@ -302,7 +294,7 @@ Soar::Production::Parser::PRDGrammar - P::RD grammar for Soar productions
 
 =head1 VERSION
 
-version 1.122830
+version 1.122860
 
 =head1 SYNOPSIS
 
